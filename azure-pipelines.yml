@@ -18,6 +18,7 @@ steps:
 - script: |
     npm install
     npm run build
+    npm install -g appcenter-cli
     npm audit fix
   displayName: 'npm install and build'
 
