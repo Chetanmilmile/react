@@ -21,6 +21,12 @@ steps:
     npm audit fix
   displayName: 'npm install and build'
 
+- task: AppCenterTest@1
+  inputs:
+    artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest'
+    frameworkOption: 'appium'
+    credentialsOption: 'serviceEndpoint'
+    localeOption: 'en_US'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
